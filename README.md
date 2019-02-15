@@ -1,21 +1,19 @@
 # aws-cloudformation-lambda
 
-## ssm-put-parameter.yaml
+## Functions
+- [ssm-put-parameter](https://github.com/hixi-hyi/aws-cloudformation-lambda/README-ssm-put-parameter.md)
 
-### deploy
-```
-aws cloudformation deploy --template-file ssm-put-parameter.yaml --stack-name cfn-lambda-ssm-put-parameter --capabilities CAPABILITY_NAMED_IAM
-```
+## Common parameters
+### CreationPolicy
+- UseIfExists
+- Overwrite
+### UpdatePolicy
+- Retain
+- Update
+### DeletionPolicy
+- IgnoreError
+- Retain
+- Delete
 
-### usage
-```
-AccessKeySecret:
-  Type: Custom::CfnLambda
-  Properties:
-    ServiceToken: !ImportValue cfn-lambda-ssm-put-parameter:LambdaArn
-    Region: !Ref AWS::Region
-    Name: /user/hixi/access-key-secret
-    Value: !GetAtt HixiAccessKey.SecretAccessKey
-    Type: SecureString
-    DeletionPolicy: Delete
-```
+## ToDo
+- Supports the `RoleArn` property on resource definition.
