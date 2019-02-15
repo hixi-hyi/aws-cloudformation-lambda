@@ -1,7 +1,7 @@
 # aws-cloudformation-lambda
 
 ## Functions
-- [ssm-put-parameter](https://github.com/hixi-hyi/aws-cloudformation-lambda/README-ssm-put-parameter.md)
+- [ssm-put-parameter](https://github.com/hixi-hyi/aws-cloudformation-lambda/blob/master/README-ssm-put-parameter.md)
 
 ## Common parameters
 ### CreationPolicy
