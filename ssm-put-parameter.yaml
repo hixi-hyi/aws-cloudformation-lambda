@@ -145,7 +145,6 @@ Resources:
           def handler(event, context):
             ssm = SsmPut(event, context)
             return ssm.handle()
-
       Handler: index.handler
       Runtime: python3.6
       Role: !GetAtt Role.Arn
