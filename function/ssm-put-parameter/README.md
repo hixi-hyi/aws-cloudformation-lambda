@@ -15,7 +15,9 @@ AccessKeySecret:
     Type: SecureString
     Value: !GetAtt HixiAccessKey.SecretAccessKey
     Region: !Ref AWS::Region
-    DeletionPolicy: Delete
+    Policies:
+        Deletion:
+            - Delete
 ```
 ## Parameters
 
@@ -24,21 +26,21 @@ AccessKeySecret:
 
 ### Type (required)
 - [Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type)
-- The `SecureString` parameter type supported.
+- The `SecureString` parameter type is supported.
 
 ### Value (required)
 - [Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value)
 
 ### Region (optional)
 - [Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html)
+- The region outside the default are also supported.
 - Default parameter is `AWS::Region`.
 
-### DeletionPolicy (optional)
+### Policies.Deletion (optional)
 - [Docs](https://github.com/hixi-hyi/aws-cloudformation-lambda/README.md)
 - Support values are `IgnoreError` `Delete` `Retain`.
-- Default is `Retain`.
+- Default is `Delete`.
 
 
 ## ToDO
 - Support kms
-
