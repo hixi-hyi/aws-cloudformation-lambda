@@ -37,7 +37,7 @@ AccessKeySecret:
 - Default parameter is `AWS::Region`.
 
 ### Policies.Deletion (optional)
-- [Docs](https://github.com/hixi-hyi/aws-cloudformation-lambda/README.md)
+- [Docs](../../README.md)
 - Support values are `IgnoreError` `Delete` `Retain`.
 - Default is `Delete`.
 
