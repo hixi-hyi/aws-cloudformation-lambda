@@ -1,7 +1,22 @@
 # aws-cloudformation-lambda
 
+## Setup
+1. setup the s3 bucket
+[setup](/setup)
+```
+./script/deploy-bucket.sh
+```
+2. deploy the base layer
+[custom-resource-provider](/layer/cfnprovider)
+```
+./script/deploy-layer.sh cfnprovider
+```
+
 ## Functions
-- [ssm-put-parameter](https://github.com/hixi-hyi/aws-cloudformation-lambda/blob/master/README-ssm-put-parameter.md)
+- [ssm-put-parameter](/function/ssm-put-parameter)
+```
+./script/deploy-function.sh ssm-put-parameter
+```
 
 ## Common parameters
 ### CreationPolicy
@@ -16,4 +31,4 @@
 - Delete
 
 ## ToDo
-- Supports the `RoleArn` property on resource definition.
+- Supports the `RoleArn` property on resource definition. The current role which defined by function may have strong permissions.
