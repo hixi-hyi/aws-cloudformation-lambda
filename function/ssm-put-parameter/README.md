@@ -21,25 +21,36 @@ AccessKeySecret:
 ```
 ## Parameters
 
-### Name (required)
+### Name
 - [Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-name)
+- ***Required:*** Yes
+- ***Update requires:*** Replacement
 
-### Type (required)
+### Type
 - [Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type)
 - The `SecureString` parameter type is supported.
+- ***Required:*** Yes
+- ***Update requires:*** Replacement
 
-### Value (required)
+
+### Value (required) [No interruption]
 - [Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value)
+- ***Required:*** Yes
+- ***Update requires:*** No interruption
 
-### Region (optional)
+### Region (optional) [Replacement]
 - [Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html)
 - The region outside the default are also supported.
 - Default parameter is `AWS::Region`.
+- ***Required:*** No
+- ***Update requires:*** Replacement
 
 ### Policies.Deletion (optional)
 - [Docs](../../README.md)
 - Support values are `IgnoreError` `Delete` `Retain`.
 - Default is `Delete`.
+- ***Required:*** No
+- ***Update requires:*** No interruption
 
 
 ## ToDO
