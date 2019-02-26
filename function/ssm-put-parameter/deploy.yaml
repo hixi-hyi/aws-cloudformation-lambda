@@ -18,6 +18,8 @@ Resources:
     Type: AWS::IAM::Role
     Properties:
       Path: /cfn-lambda/
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
@@ -32,12 +34,6 @@ Resources:
           PolicyDocument:
             Version: 2012-10-17
             Statement:
-              - Effect: Allow
-                Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Resource: arn:aws:logs:*:*:*
               - Effect: Allow
                 Action:
                   - ssm:DeleteParameter
