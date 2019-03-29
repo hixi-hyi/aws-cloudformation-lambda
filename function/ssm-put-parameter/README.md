@@ -1,10 +1,16 @@
 # cfn-lambda-ssm-put-parameter
 ## Description
+The `cfn-lambda-ssm-put-parameter` is `SSM::Parameter` that support `SecureString` and `Region`
+
+## When do you use it
+* Put on secret infomation like `!GetAtt AWS::IAM::AccessKey.SecretAccessKey` into SSM::Parameter as SecureString.
+* Put on `Arn` that can only be created in a specific region such as ACM into other region.
 
 ## Deploy
 ```
 aws cloudformation deploy --template-file ssm-put-parameter.yaml --stack-name cfn-lambda-ssm-put-parameter --capabilities CAPABILITY_NAMED_IAM
 ```
+
 ## Usage
 ```
 AccessKeySecret:
