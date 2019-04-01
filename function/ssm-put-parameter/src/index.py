@@ -41,8 +41,7 @@ class Ssm(CustomResourceProvider):
       return
 
     try:
-      if policies.has('Delete'):
-        self._ssm.delete_parameter(Name=self._name)
+      self._ssm.delete_parameter(Name=self._name)
     except Exception as e:
       if policies.has('IgnoreError'):
         return
