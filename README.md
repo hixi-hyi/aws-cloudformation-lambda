@@ -15,18 +15,3 @@
 ```
 ./script/deploy-function.sh ssm-put-parameter
 ```
-
-## Common parameters
-### CreationPolicy
-- UseIfExists
-- Overwrite
-### UpdatePolicy
-- Retain
-- Update
-### DeletionPolicy
-- IgnoreError
-- Retain
-- Delete
-
-## ToDo
-- Supports the `RoleArn` property on resource definition. The current role which defined by function may have strong permissions.
