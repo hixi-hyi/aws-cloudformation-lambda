@@ -127,6 +127,8 @@ class CustomResourceProvider(object):
   def default_deletion_policies(self):
     return []
 
+  def run(self):
+
   def handle(self):
     try:
       if self.request_type == 'Create':
