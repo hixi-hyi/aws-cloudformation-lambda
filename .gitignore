@@ -1,3 +1,5 @@
 .python-version
 __pycache__
 .pyc
+/function/*.zip
+/layer/*.zip

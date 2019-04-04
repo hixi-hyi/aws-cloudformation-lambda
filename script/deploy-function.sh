@@ -9,8 +9,17 @@ key=function/${function}.zip
 
 (cd function/${function}/src > /dev/null && zip -q -r ../../${function}.zip ./*)
 
-version=$(script/deploy-if-file-updated.sh $bucket $key)
+# deploy layer
+script/deploy-layer.sh cfnprovider
 
-layers=$(echo "LayerVersionCfnprovider=$(aws s3api head-object --bucket cfn-lambda-s3-bucket-e0dkjneurcdu --key layer/cfnprovider.zip --query 'VersionId' --output 'text')")
+version=$(script/deploy-if-file-updated.sh $bucket $key)
+err=$?
+if [ $err -gt 0 ]; then
+    echo "cfn-lambda-${function}: no changes"
+else
+    echo "cfn-lambda-${function}: updated"
+fi
+
+layers=$(echo "LayerVersionCfnprovider=$(aws s3api head-object --bucket ${bucket} --key layer/cfnprovider.zip --query 'VersionId' --output 'text')")
 
 aws cloudformation deploy --stack-name cfn-lambda-${function} --template-file function/${function}/deploy.yaml --parameter-overrides LambdaBucket=${bucket} LambdaKey=function/${function}.zip LambdaVersion=${version} ${layers} --capabilities CAPABILITY_IAM
