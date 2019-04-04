@@ -57,6 +57,8 @@ class Response(object):
 
   def set_data(self, key, value):
     self.response['Data'][key] = value
+  def get_data(self, key):
+    return self.response['Data'][key]
   def to_json(self):
     return json.dumps(self.response)
 
@@ -128,20 +130,21 @@ class CustomResourceProvider(object):
     return []
 
   def run(self):
+    if self.request_type == 'Create':
+      policies = Policies(self.get_policies('Creation', self.default_creation_policies()))
+      self.create(policies)
+    elif self.request_type == 'Update':
+      policies = Policies(self.get_policies('Update', self.default_update_policies()))
+      self.update(policies)
+    elif self.request_type == 'Delete':
+      policies = Policies(self.get_policies('Deletion', self.default_deletion_policies()))
+      self.delete(policies)
+    else:
+      raise
 
   def handle(self):
     try:
-      if self.request_type == 'Create':
-        policies = Policies(self.get_policies('Creation', self.default_creation_policies()))
-        self.create(policies)
-      elif self.request_type == 'Update':
-        policies = Policies(self.get_policies('Update', self.default_update_policies()))
-        self.update(policies)
-      elif self.request_type == 'Delete':
-        policies = Policies(self.get_policies('Deletion', self.default_deletion_policies()))
-        self.delete(policies)
-      else:
-        raise
+      self.run()
     except Exception as e:
       logger.critical(traceback.format_exc())
       self.failed(str(e))

@@ -21,7 +21,7 @@ class Secret(CustomResourceProvider):
     return "{}".format(self._name)
 
   def generate(self):
-    secret = ''.join(secrets.choice(self._pattern) for _ in range(self_length))
+    secret = ''.join(secrets.choice(self._pattern) for _ in range(self._length))
     return secret
 
   def set_secret(self, secret):
@@ -36,7 +36,7 @@ class Secret(CustomResourceProvider):
     )
 
   def get_ssm(self):
-    secret = self.ssm.get_parameter(
+    secret = self._ssm.get_parameter(
       Name=self._name,
       WithDecryption=True
     )['Parameter']['Value']
