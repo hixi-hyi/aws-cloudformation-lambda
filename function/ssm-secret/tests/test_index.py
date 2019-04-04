@@ -26,19 +26,23 @@ class TestScenario(TestCase):
     update_event = cfntest.get_update_event({"Name": "/test/demo", "Length": "12"}, cfntest.get_properties(create_event))
     delete_event = cfntest.get_delete_event(cfntest.get_properties(update_event), cfntest.get_properties(update_event))
 
+    physical_resource_id = ''
     if True:
       c = Secret(create_event, context)
       c.run()
       self.assertEqual(get_ssm("/test/demo"), c.response.get_data("Secret"))
       self.assertEqual(len(get_ssm("/test/demo")), 32)
+      physical_resource_id = c.response.physical_resource_id
 
     if True:
       c = Secret(update_event, context)
       c.run()
+      self.assertEqual(c.response.physical_resource_id, physical_resource_id)
       self.assertEqual(len(get_ssm("/test/demo")), 12)
 
     if True:
       c = Secret(delete_event, context)
       c.run()
+      self.assertEqual(c.response.physical_resource_id, physical_resource_id)
       with self.assertRaises(Exception):
         get_ssm("/test/demo")

@@ -38,7 +38,7 @@ class Response(object):
     }
   @property
   def physical_resource_id(self):
-    return self.reseponse['PhysicalResourceId']
+    return self.response['PhysicalResourceId']
   @physical_resource_id.setter
   def physical_resource_id(self, value):
     self.response['PhysicalResourceId'] = value
