@@ -3,7 +3,7 @@
 The `cfn-value` function define a constant in outside `Parameter`.
 
 ## When do you use it
-* Define a constant to use repeatdly in AWS::CloudFormation
+* Define a constant to use repeatedly in AWS::CloudFormation
 
 ## Deploy
 ```
