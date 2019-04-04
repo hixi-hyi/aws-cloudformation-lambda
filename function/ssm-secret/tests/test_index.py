@@ -1,5 +1,4 @@
 from unittest import TestCase
-from unittest.mock import MagicMock, patch
 from moto import mock_ssm
 from src.index import Secret
 import cfntest
@@ -25,7 +24,7 @@ class TestScenario(TestCase):
     context = cfntest.get_context()
     create_event = cfntest.get_create_event({"Name": "/test/demo"})
     update_event = cfntest.get_update_event({"Name": "/test/demo", "Length": "12"}, cfntest.get_properties(create_event))
-    delete_event = cfntest.get_delete_event(cfntest.get_properties(update_event), cfntest.get_old_properties(update_event))
+    delete_event = cfntest.get_delete_event(cfntest.get_properties(update_event), cfntest.get_properties(update_event))
 
     if True:
       c = Secret(create_event, context)
