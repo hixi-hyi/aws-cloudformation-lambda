@@ -14,3 +14,7 @@ Outputs:
     Value: !GetAtt Bucket.Arn
     Export:
       Name: !Sub "${AWS::StackName}:BucketArn"
+  DomainName:
+    Value: !GetAtt Bucket.DomainName
+    Export:
+      Name: !Sub "${AWS::StackName}:DomainName"
