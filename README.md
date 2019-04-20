@@ -11,7 +11,19 @@
 ```
 
 ## Functions
-- [ssm-put-parameter](/function/ssm-put-parameter)
+### ssm-put-parameter
+#### deploy function
+```
+./script/deploy-function.sh ssm-put-parameter
+```
+#### test
+```
+./script/run-test.sh ssm-put-parameter
+```
+#### deploy demo stack
+```
+./script/deploy-demo.sh ssm-put-parameter
+```
 - [ssm-secret](/function/ssm-secret)
 - [value](/function/value)
 - [strings](/function/strings)

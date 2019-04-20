@@ -1,0 +1,3 @@
+[submodule "function/ssm-secret"]
+	path = function/ssm-secret
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-ssm-secret.git
