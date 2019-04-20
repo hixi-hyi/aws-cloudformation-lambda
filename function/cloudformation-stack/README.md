@@ -57,3 +57,9 @@ Resources:
 - ***Default:*** `!Ref AWS::Region`
 - ***Required:*** No
 - ***Update requires:*** Replacement
+
+## Return Values
+### !Ref
+- Returns: the Stack ID.
+### !GetAtt Outputs.*NestedStackOutputName*
+- Returns: The output value from the specified nested stack where NestedStackOutputName is the name of the output value.
