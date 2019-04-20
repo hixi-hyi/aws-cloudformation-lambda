@@ -1,7 +1,7 @@
 # aws-cloudformation-lambda
 
 The repository provides cloudformation-lambda (cloudformation custom resource).
-See [here](#Functions) for a list of functions.
+See [here](/function) for a list of functions.
 
 ## Setup
 1. [setup the s3 bucket](/setup)
@@ -19,7 +19,7 @@ See [here](#Functions) for a list of functions.
 ```
 
 ## Functions
-- [ssm-secret](/function/ssm-secret)
+- [ssm-secret](https://github.com/hixi-hyi/aws-cloudformation-lambda-ssm-secret/)
 - [ssm-put-parameter](/function/ssm-put-parameter)
 - [value](/function/value)
 - [strings](/function/strings)
