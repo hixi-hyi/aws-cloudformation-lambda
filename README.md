@@ -10,21 +10,25 @@
 ./script/deploy-layer.sh cfnprovider
 ```
 
+## Deploy functions
+```
+./script/deploy-function.sh ${function}
+```
+
 ## Functions
-### ssm-put-parameter
-#### deploy function
-```
-./script/deploy-function.sh ssm-put-parameter
-```
-#### test
-```
-./script/run-test.sh ssm-put-parameter
-```
-#### deploy demo stack
-```
-./script/deploy-demo.sh ssm-put-parameter
-```
 - [ssm-secret](/function/ssm-secret)
+- [ssm-put-parameter](/function/ssm-put-parameter)
 - [value](/function/value)
 - [strings](/function/strings)
 - [cloudformation-stack](/function/cloudformation-stack)
+
+
+## Contributing
+### Test functions
+```
+./script/run-test.sh ${function}
+```
+### Deploy demo stack
+```
+./script/deploy-demo.sh ${function}
+```
