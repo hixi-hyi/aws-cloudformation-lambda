@@ -1,3 +1,15 @@
 [submodule "function/ssm-secret"]
 	path = function/ssm-secret
 	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-ssm-secret.git
+[submodule "function/ssm-put-parameter"]
+	path = function/ssm-put-parameter
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-ssm-put-parameter.git
+[submodule "function/value"]
+	path = function/value
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-value.git
+[submodule "function/strings"]
+	path = function/strings
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-strings.git
+[submodule "function/cloudformation-stack"]
+	path = function/cloudformation-stack
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-cloudformation-stack.git
