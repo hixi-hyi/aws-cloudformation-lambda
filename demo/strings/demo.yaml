@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  Date:
+    Type: String
+Resources:
+  Environment:
+    Type: Custom::Lambda
+    Properties:
+      ServiceToken: !ImportValue cfn-lambda-strings:LambdaArn
+      Values:
+        - "dev"
+        - "hixi"
+      DeployAlways: !Ref Date
+Outputs:
+  OutputEnvironment:
+    Value: !GetAtt Environment.Dotize
