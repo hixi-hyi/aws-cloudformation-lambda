@@ -9,6 +9,7 @@ The `cfn-lambda-cloudformation-stack` function is `AWS::CloudFormation::Stack` t
 * It'is not normally cloudformation's flow. We cannot look like the nested resource.
 * The function calls for strong permission to create all of aws resource, but you probably don't have to worry. Because the function can delete only resource defined by itself.
 * The function cannot delect changes in child stack. You have to define parameter that are alway change and pass them to the function. (like `--parameter-overrides Date=$(date)`)
+* You can not operate the stack for more than 15 minites due to lambda limitation.
 
 ## Deploy
 ```
