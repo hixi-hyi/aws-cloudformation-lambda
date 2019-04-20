@@ -14,4 +14,5 @@
 - [ssm-put-parameter](/function/ssm-put-parameter)
 - [ssm-secret](/function/ssm-secret)
 - [value](/function/value)
-- [strings](/function/value)
+- [strings](/function/strings)
+- [cloudformation-stack](/function/cloudformation-stack)

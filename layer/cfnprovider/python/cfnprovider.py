@@ -78,6 +78,12 @@ class CustomResourceProvider(object):
   def request_type(self):
     return self._request['RequestType']
   @property
+  def logical_resource_id(self):
+    return self._request['LogicalResourceId']
+  @property
+  def stack_id(self):
+    return self._request['StackId']
+  @property
   def response(self):
     return self._response
   @response.setter
