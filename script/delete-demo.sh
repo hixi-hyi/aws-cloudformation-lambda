@@ -4,4 +4,5 @@ if [ -z "$1" ]; then
   exit 1
 fi
 function=$1
-aws cloudformation delete-stack --stack-name cfn-lambda-${function}-demo
+demo=${2:demo}
+aws cloudformation delete-stack --stack-name cfn-lambda-${function}-${demo}
