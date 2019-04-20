@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  Date:
+    Type: String
+Resources:
+  Environment:
+    Type: Custom::Lambda
+    Properties:
+      ServiceToken: !ImportValue cfn-lambda-debug:LambdaArn
+      Value: "dev"
+      DeployAlways: !Ref Date
