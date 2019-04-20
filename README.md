@@ -1,5 +1,8 @@
 # aws-cloudformation-lambda
 
+The repository provides cloudformation-lambda (cloudformation custom resource).
+See [here](#Functions) for a list of functions.
+
 ## Setup
 1. [setup the s3 bucket](/setup)
 ```
