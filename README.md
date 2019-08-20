@@ -15,6 +15,13 @@ See [here](/function) for a list of functions.
 ```
 
 ### Deploy functions
+***Caution***
+You should run following command, If you use MacOSX.
+```
+brew install coreutils
+alias stat="gstat"
+```
+
 ```
 ./script/deploy-function.sh ${function}
 ```
@@ -25,6 +32,7 @@ See [here](/function) for a list of functions.
 - [value](https://github.com/hixi-hyi/aws-cloudformation-lambda-value)
 - [strings](https://github.com/hixi-hyi/aws-cloudformation-lambda-strings)
 - [cloudformation-stack](https://github.com/hixi-hyi/aws-cloudformation-lambda-cloudformation-stack)
+- [s3-bucket-norification-configuration](https://github.com/hixi-hyi/aws-cloudformation-lambda-s3-bucket-notification-configuration)
 
 
 ## Contributing

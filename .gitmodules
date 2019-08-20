@@ -13,3 +13,6 @@
 [submodule "function/cloudformation-stack"]
 	path = function/cloudformation-stack
 	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-cloudformation-stack.git
+[submodule "function/s3-bucket-notification-configuration"]
+	path = function/s3-bucket-notification-configuration
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-s3-bucket-notification-configuration.git
