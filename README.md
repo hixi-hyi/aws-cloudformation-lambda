@@ -32,6 +32,7 @@ brew install coreutils
 - [strings](https://github.com/hixi-hyi/aws-cloudformation-lambda-strings)
 - [cloudformation-stack](https://github.com/hixi-hyi/aws-cloudformation-lambda-cloudformation-stack)
 - [s3-bucket-norification-configuration](https://github.com/hixi-hyi/aws-cloudformation-lambda-s3-bucket-notification-configuration)
+- [import-value](https://github.com/hixi-hyi/aws-cloudformation-lambda-import-value)
 
 
 ## Contributing

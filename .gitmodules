@@ -16,3 +16,6 @@
 [submodule "function/s3-bucket-notification-configuration"]
 	path = function/s3-bucket-notification-configuration
 	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-s3-bucket-notification-configuration.git
+[submodule "function/import-value"]
+	path = function/import-value
+	url = git@github.com:hixi-hyi/aws-cloudformation-lambda-import-value.git
