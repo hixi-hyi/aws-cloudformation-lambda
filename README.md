@@ -19,7 +19,6 @@ See [here](/function) for a list of functions.
 You should run following command, If you use MacOSX.
 ```
 brew install coreutils
-alias stat="gstat"
 ```
 
 ```

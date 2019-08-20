@@ -6,7 +6,12 @@ fi
 bucket=$1
 file=$2
 
-localsize=$(stat --printf "%s" ${file})
+if [ "$(uname)" == 'Darwin' ]; then
+    localsize=$(gstat --printf "%s" ${file})
+else
+    localsize=$(stat --printf "%s" ${file})
+fi
+
 remotesize=$(aws s3api head-object --bucket ${bucket} --key ${file} --query "ContentLength" --output "text" 2> /dev/null)
 
 if [ "${localsize}" == "${remotesize}" ]; then
